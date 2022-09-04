@@ -1,6 +1,5 @@
 // Samuel Kuger Muriel
 // 000416026
-// samuel.kuger@upb.edu.co
 
 (INICIO)
 		@KBD
