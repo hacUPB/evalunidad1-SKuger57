@@ -1,7 +1,8 @@
 // Samuel Kuger Muriel
 // 000416026
+// samuel.kuger@upb.edu.co
 
-(INICIO)
+(INICIO) // Inicia la variable de las 2 teclas y en caso de que una sea oprimida dice que debe ejecutar "VACIO" o "LINEAS", es un loop, o sea, hasta que no se ordene algo no pasa de aca.
 		@KBD
 		D=M
 		@84
@@ -19,7 +20,7 @@
 		@INICIO
 		0;JMP
 
-(VACIO)
+(VACIO) // Indica las cordenadas y el punto desde donde se comienza a borrar haciendo un salto a la funcion de borrarse y reinicia el contador.
 		@16384
 		D=A
 		@COORDENADA1
@@ -41,7 +42,7 @@
 		@BORRAR
 		0;JMP
 
-(LINEAS)
+(LINEAS) // Indica las coordenadas desde donde se empiezan a pintar las lineas llevando el codigo a "cordpintar" y se reinicia el contador.
 		@16400 
 		D=A 
 		@COORDENADA2
@@ -66,7 +67,7 @@
 		@PINTAR
 		0;JMP
 
-(BLANCO)
+(BLANCO) // Indica las coordenadas donde no se pintan las lineas y las manda a la orden de borrar.
 
 		@20480
 		D=A
@@ -90,7 +91,7 @@
 		@BORRAR
 		0;JMP
 
-(PINTAR)
+(PINTAR) // Es un loop el cual hace que se pinte en las coordenadas indicadas y cuando termina hace un salto a "BLANCO".
 		@CUENTA2
 		D=M
 		@BLANCO
@@ -114,7 +115,7 @@
 		@PINTAR
 		0;JMP
 
-(BORRAR)
+(BORRAR) // Es un loop el cual hace que se borre en las coordenadas indicadas y cuando termina hace un salto a "FINAL", que a su vez vuelve a iniciar el codigo.
 		@CUENTA1
 		D=M
 		@FINAL
@@ -138,6 +139,6 @@
 		@BORRAR
 		0;JMP
 
-(FINAL)
+(FINAL) // Da la orden de volver a "inicio" para poder usar nuevamente el programa.
 		@INICIO
 		0;JMP
