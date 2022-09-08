@@ -47,7 +47,7 @@
 		D=A 
 		@COORDENADA2
 		M=D
-		@256 
+		@255 
 		D=A
 		@CUENTA2
 		M=D
@@ -55,7 +55,7 @@
 		D=A
 		@SALTO
 		M=D
-		@256
+		@255
 		D=A
 		@COLOR
 		M=D
