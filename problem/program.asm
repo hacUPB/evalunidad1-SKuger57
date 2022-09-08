@@ -27,17 +27,17 @@
 		M=D
 		@8192
 		D=A
-		@CUENTA1
+		@CUENTA
 		M=D
 		@1
 		D=A
-		@SALTO1
+		@SALTO
 		M=D
 		@COLOR1
 		M=0
 		@COORDENADA1
 		D=M
-		@PANTALLA
+		@pscreen
 		M=D
 		@BORRAR
 		0;JMP
@@ -49,7 +49,7 @@
 		M=D
 		@256 
 		D=A
-		@CUENTA2
+		@CUENTA
 		M=D
 		@32
 		D=A
@@ -62,7 +62,7 @@
 
 		@COORDENADA2
 		D=M
-		@PANTALLA
+		@pscreen
 		M=D
 		@PINTAR
 		0;JMP
@@ -75,65 +75,65 @@
 		M=D
 		@32
 		D=A
-		@CUENTA1
+		@CUENTA
 		M=D
 		@1
 		D=A
-		@SALTO1
+		@SALTO
 		M=D
 		@COLOR1
 		M=-1
 		
 		@COORDENADA1
 		D=M
-		@PANTALLA
+		@pscreen
 		M=D
 		@BORRAR
 		0;JMP
 
 (PINTAR) 
-		@CUENTA2
+		@CUENTA
 		D=M
 		@HOR
 		D;JEQ
 
 		@COLOR
 		D=M
-		@PANTALLA
+		@pscreen
 		A=M
 		M=D
 
-		@CUENTA2
+		@CUENTA
 		M=M-1
 
 		@SALTO
 		D=M
 
-		@PANTALLA
+		@pscreen
 		M=M+D
 
 		@PINTAR
 		0;JMP
 
 (BORRAR) 
-		@CUENTA1
+		@CUENTA
 		D=M
 		@FINAL
 		D;JEQ
 
 		@COLOR1
 		D=M
-		@PANTALLA
+		@pscreen
 		A=M
 		M=D
 
-		@CUENTA1
+		@CUENTA
 		M=M-1
 
-		@SALTO1
+		@SALTO
 		D=M
 
-		@PANTALLA
+		@pscreen
 		M=M+D
 
 		@BORRAR
