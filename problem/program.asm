@@ -47,7 +47,7 @@
 		D=A 
 		@COORDENADA2
 		M=D
-		@255 
+		@256 
 		D=A
 		@CUENTA2
 		M=D
