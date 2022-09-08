@@ -2,7 +2,7 @@
 // 000416026
 // samuel.kuger@upb.edu.co
 
-(INICIO) 
+(INICIO)
 		@KBD
 		D=M
 		@84
@@ -20,125 +20,113 @@
 		@INICIO
 		0;JMP
 
-(VACIO) 
-		@16384
+(VACIO)
+        @16384
+        D=A
+        @COORDENADA
+        M=D 
+        @8192
+        D=A
+
+        @CUENTA
+        M=D
+        @1
+        D=A 
+
+        @CUENTA2
+        M=D
+
+        @COLOR
+        M=0
+
+        @TASK
+        0;JMP
+
+(HOR)
+		@20480
 		D=A
-		@COORDENADA1
+		@COORDENADA
 		M=D
-		@8192
+		@32
 		D=A
+
 		@CUENTA
 		M=D
 		@1
 		D=A
-		@SALTO
+
+		@CUENTA2
 		M=D
-		@COLOR1
-		M=0
-		@COORDENADA1
-		D=M
-		@pscreen
-		M=D
-		@BORRAR
+
+		@COLOR
+		M=-1
+		@if
+		M=1
+
+		@TASK
 		0;JMP
 
-(VERT) 
+(VERT)
 		@16400 
 		D=A 
-		@COORDENADA2
+		@COORDENADA
 		M=D
 		@256 
 		D=A
+
 		@CUENTA
 		M=D
 		@32
 		D=A
-		@SALTO
+
+		@CUENTA2
 		M=D
 		@256
 		D=A
+
 		@COLOR
 		M=D
+		@if
+		M=0
 
-		@COORDENADA2
-		D=M
-		@pscreen
-		M=D
-		@PINTAR
+		@TASK
 		0;JMP
 
-(HOR) 
+(TASK)
+        @COORDENADA
+        D=M
+        @PANTALLA
+        M=D
 
-		@20480
-		D=A
-		@COORDENADA1
-		M=D
-		@32
-		D=A
-		@CUENTA
-		M=D
-		@1
-		D=A
-		@SALTO
-		M=D
-		@COLOR1
-		M=-1
+(PINTAR)
+        @CUENTA
+        D=M 
+        @FINAL
+        D;JEQ
+
+        @COLOR
+        D=M 
+        @PANTALLA
+        A=M 
+        M=D
+
+        @CUENTA
+        M=M-1
+
+        @CUENTA2
+        D=M
+
+        @PANTALLA
+        M=M+D
+
+        @PINTAR
+        0;JMP
+
+(FINAL)
+        @if
+        D=M 
+        @HOR
+        D;JEQ  
 		
-		@COORDENADA1
-		D=M
-		@pscreen
-		M=D
-		@BORRAR
-		0;JMP
-
-(PINTAR) 
-		@CUENTA
-		D=M
-		@HOR
-		D;JEQ
-
-		@COLOR
-		D=M
-		@pscreen
-		A=M
-		M=D
-
-		@CUENTA
-		M=M-1
-
-		@SALTO
-		D=M
-
-		@pscreen
-		M=M+D
-
-		@PINTAR
-		0;JMP
-
-(BORRAR) 
-		@CUENTA
-		D=M
-		@FINAL
-		D;JEQ
-
-		@COLOR1
-		D=M
-		@pscreen
-		A=M
-		M=D
-
-		@CUENTA
-		M=M-1
-
-		@SALTO
-		D=M
-
-		@pscreen
-		M=M+D
-
-		@BORRAR
-		0;JMP
-
-(FINAL) 
-		@INICIO
-		0;JMP
+        @INICIO
+        0;JMP
